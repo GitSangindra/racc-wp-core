@@ -1,0 +1,5 @@
+feat: Add Online Consultation (Zoom) setting for products
+
+- Added checkbox setting in Woo product meta to flag products that require a Zoom meeting.
+
+- Updated bridge plugin to save this setting in _racc_booking_online_meeting meta.

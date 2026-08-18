@@ -1,0 +1,96 @@
+{
+    "data": [
+        {
+            "id": 23,
+            "name": "B2B Client"
+        },
+        {
+            "id": 16,
+            "name": "Chat GPT"
+        },
+        {
+            "id": 6,
+            "name": "Direct to Website"
+        },
+        {
+            "id": 11,
+            "name": "Email"
+        },
+        {
+            "id": 10,
+            "name": "Event"
+        },
+        {
+            "id": 1,
+            "name": "Facebook"
+        },
+        {
+            "id": 21,
+            "name": "Facebook Event Ad"
+        },
+        {
+            "id": 19,
+            "name": "Facebook Lead Ad"
+        },
+        {
+            "id": 4,
+            "name": "Google"
+        },
+        {
+            "id": 2,
+            "name": "Instagram"
+        },
+        {
+            "id": 20,
+            "name": "Instagram Event Ad"
+        },
+        {
+            "id": 18,
+            "name": "Instagram Lead Ad"
+        },
+        {
+            "id": 5,
+            "name": "Linkedin"
+        },
+        {
+            "id": 22,
+            "name": "Other"
+        },
+        {
+            "id": 15,
+            "name": "Previous Client"
+        },
+        {
+            "id": 8,
+            "name": "Promotional Code"
+        },
+        {
+            "id": 17,
+            "name": "RACC Indonesia"
+        },
+        {
+            "id": 12,
+            "name": "Referral (Family)"
+        },
+        {
+            "id": 13,
+            "name": "Referral (Friend)"
+        },
+        {
+            "id": 14,
+            "name": "Telemarketing"
+        },
+        {
+            "id": 3,
+            "name": "Tiktok"
+        },
+        {
+            "id": 9,
+            "name": "University Club"
+        },
+        {
+            "id": 7,
+            "name": "Voucher\/Flyer"
+        }
+    ]
+}

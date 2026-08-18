@@ -1,0 +1,1343 @@
+/**
+ * RACC Booking — Frontend Booking Form Styles
+ *
+ * @package RACC_Booking
+ */
+
+/* === Wrapper === */
+.racc-booking-wrapper {
+    max-width: 720px;
+    margin: 40px auto;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    color: #1e293b;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+    padding: 40px;
+    line-height: 1.6;
+}
+
+/* === Header === */
+.racc-booking-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.racc-booking-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 8px;
+}
+
+.racc-booking-subtitle {
+    font-size: 15px;
+    color: #64748b;
+    margin: 0;
+}
+
+/* === Progress Steps === */
+.racc-booking-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 35px;
+    padding: 0 10px;
+}
+
+.racc-step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.4;
+    transition: all 0.3s ease;
+}
+
+.racc-step.active {
+    opacity: 1;
+}
+
+.racc-step.completed {
+    opacity: 0.8;
+}
+
+.racc-step-number {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #e2e8f0;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.racc-step.active .racc-step-number {
+    background: #2563eb;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+}
+
+.racc-step.completed .racc-step-number {
+    background: #10b981;
+    color: #fff;
+}
+
+.racc-step-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b;
+    white-space: nowrap;
+}
+
+.racc-step.active .racc-step-label {
+    color: #2563eb;
+}
+
+.racc-step-line {
+    flex: 1;
+    height: 2px;
+    background: #e2e8f0;
+    margin: 0 12px;
+    min-width: 20px;
+    max-width: 50px;
+}
+
+/* === Step Content === */
+.racc-booking-step-content {
+    min-height: 200px;
+    animation: raccFadeIn 0.3s ease;
+}
+
+@keyframes raccFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.racc-booking-step-content h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 0 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.racc-icon {
+    font-style: normal;
+    font-size: 20px;
+}
+
+.racc-step-description {
+    margin: -10px 0 18px;
+    font-size: 14px;
+    color: #64748b;
+}
+
+/* === New Services Grid (Step 1) === */
+.racc-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+}
+
+.racc-services-grid .racc-service-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    background: #f8fafc;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.racc-services-grid .racc-service-card:hover {
+    border-color: #2563eb;
+    background: #eff6ff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.10);
+}
+
+.racc-services-grid .racc-service-card.selected {
+    border-color: #2563eb;
+    background: #eff6ff;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.14);
+}
+
+.racc-service-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: #dbeafe;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.racc-services-grid .racc-service-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+/* === Agents Grid === */
+.racc-agents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.racc-select-all-btn {
+    grid-column: 1 / -1;
+    justify-self: flex-start;
+    margin-bottom: 2px;
+}
+
+.racc-select-all-btn.active {
+    background: #eff6ff;
+    color: #2563eb;
+    border-color: #2563eb;
+}
+
+.racc-agent-card {
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.racc-agent-card:hover {
+    border-color: #2563eb;
+    background: #eff6ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+}
+
+.racc-agent-card.selected {
+    border-color: #2563eb;
+    background: #eff6ff;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.racc-agent-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 auto 12px;
+}
+
+.racc-agent-card .racc-agent-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 0 0 4px;
+}
+
+.racc-agent-card .racc-agent-email {
+    font-size: 12px;
+    color: #94a3b8;
+    word-break: break-all;
+}
+
+/* === Date & Time === */
+.racc-datetime-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.racc-date-picker-wrap label,
+.racc-availability-wrap label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 6px;
+}
+
+/* In inline mode the hidden text input is replaced by the Flatpickr calendar widget. */
+#racc-date-picker {
+    display: none;
+}
+
+/* === Inline Flatpickr Calendar === */
+.racc-date-picker-wrap {
+    margin-bottom: 4px;
+}
+
+/* Constrain calendar to a compact, fixed-width box centred inside the column */
+.racc-date-picker-wrap .flatpickr-calendar.inline {
+    box-shadow: none !important;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    width: 280px !important;
+    max-width: 100%;
+    margin-top: 6px;
+    background: #fff;
+    font-size: 12px;
+}
+
+.racc-date-picker-wrap .flatpickr-calendar.inline .flatpickr-months {
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 2px 0;
+    height: 36px;
+}
+
+.racc-date-picker-wrap .flatpickr-calendar.inline .flatpickr-month {
+    height: 32px;
+    line-height: 32px;
+}
+
+.racc-date-picker-wrap .flatpickr-calendar.inline .flatpickr-current-month {
+    font-size: 13px;
+    padding-top: 6px;
+}
+
+.racc-date-picker-wrap .flatpickr-calendar.inline .flatpickr-prev-month,
+.racc-date-picker-wrap .flatpickr-calendar.inline .flatpickr-next-month {
+    padding: 7px 9px;
+}
+
+.racc-date-picker-wrap .flatpickr-calendar.inline .flatpickr-prev-month svg,
+.racc-date-picker-wrap .flatpickr-calendar.inline .flatpickr-next-month svg {
+    width: 12px;
+    height: 12px;
+}
+
+/* Match selected-day colour to primary brand blue */
+.racc-date-picker-wrap .flatpickr-calendar.inline .flatpickr-day.selected,
+.racc-date-picker-wrap .flatpickr-calendar.inline .flatpickr-day.selected:hover {
+    background: #2563eb;
+    border-color: #2563eb;
+}
+
+.racc-date-picker-wrap .flatpickr-calendar.inline .flatpickr-day.today {
+    border-color: #2563eb;
+}
+
+.racc-date-picker-wrap .flatpickr-calendar.inline .flatpickr-day:hover:not(.flatpickr-disabled):not(.selected) {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+}
+
+.racc-date-picker-wrap .flatpickr-calendar.inline .flatpickr-innerContainer {
+    padding: 4px 0;
+}
+
+/* Stretch rContainer & flatpickr-days to fill the 280 px calendar box */
+.racc-date-picker-wrap .flatpickr-rContainer,
+.racc-date-picker-wrap .flatpickr-days {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+}
+
+/*
+ * Day grid: 7-column CSS Grid — one row per week, standard calendar layout.
+ */
+.racc-date-picker-wrap .dayContainer {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    display: grid !important;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    padding: 0 6px 4px;
+    box-sizing: border-box;
+}
+
+/* Weekday header row — same 7-column grid */
+.racc-date-picker-wrap .flatpickr-weekdaycontainer {
+    display: grid !important;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 0 6px;
+    box-sizing: border-box;
+}
+
+.racc-date-picker-wrap .flatpickr-weekday {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: 11px;
+    text-align: center;
+}
+
+/* Day cells: square, compact */
+.racc-date-picker-wrap .flatpickr-day {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none;
+    aspect-ratio: 1;
+    height: auto;
+    font-size: 12px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    position: relative;
+}
+
+/* === Time Slots === */
+.racc-time-slots label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 10px;
+}
+
+.racc-slots-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.racc-slot-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 2px solid #2563eb;
+    border-radius: 8px;
+    background: #fff;
+    color: #2563eb;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.racc-slot-btn:hover {
+    background: #2563eb;
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+}
+
+.racc-slot-btn.selected {
+    background: #2563eb;
+    color: #fff;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.racc-no-slots {
+    padding: 20px;
+    text-align: center;
+    color: #94a3b8;
+    background: #f8fafc;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* === Combined Schedule Layout (Step 3) === */
+.racc-schedule-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+/* Controls row (timezone + check button) sits directly below the calendar */
+.racc-schedule-controls {
+    margin-top: 14px;
+}
+
+.racc-schedule-col {
+    min-width: 0;
+}
+
+/* Stretch the availability column to push the button to the bottom,
+   aligning it with the select box in the adjacent timezone column. */
+.racc-availability-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.racc-availability-col .racc-availability-wrap {
+    margin: 0;
+    width: 100%;
+}
+
+.racc-availability-col #racc-check-availability {
+    width: 100%;
+}
+
+/* === Google Calendar Connectivity Alert === */
+.racc-google-alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 16px;
+    margin-bottom: 14px;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #991b1b;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.racc-google-alert-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+    line-height: 1.4;
+}
+
+#racc-timezone-select {
+    max-width: 100%;
+}
+
+#racc-time-slots {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 14px;
+}
+
+#racc-review-card {
+    margin-top: 14px;
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    border-radius: 12px;
+    padding: 14px;
+}
+
+#racc-review-card h4 {
+    margin: 0 0 10px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #0c4a6e;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.racc-review-item {
+    display: flex;
+    gap: 8px;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.racc-review-item:last-child {
+    margin-bottom: 0;
+}
+
+.racc-review-label {
+    min-width: 86px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.racc-review-value {
+    color: #0f172a;
+    font-weight: 600;
+}
+
+/* === Services === */
+.racc-services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.racc-service-option {
+    cursor: pointer;
+    display: block;
+}
+
+.racc-service-option input[type="radio"] {
+    display: none;
+}
+
+.racc-service-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+.racc-service-option:hover .racc-service-card {
+    border-color: #2563eb;
+    background: #eff6ff;
+}
+
+.racc-service-option input:checked + .racc-service-card {
+    border-color: #2563eb;
+    background: #eff6ff;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.racc-service-number {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #e2e8f0;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+
+.racc-service-option input:checked + .racc-service-card .racc-service-number {
+    background: #2563eb;
+    color: #fff;
+}
+
+.racc-service-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+/* === Form Fields === */
+.racc-form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.racc-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.racc-form-full {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 600px) {
+    .racc-form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.racc-form-section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 30px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.racc-form-section-title:first-child {
+    margin-top: 0;
+}
+
+.racc-form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 6px;
+}
+
+.racc-form-group label .required {
+    color: #dc2626;
+}
+
+.racc-form-group input,
+.racc-form-group textarea,
+.racc-form-group select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #1e293b;
+    background: #fff;
+    transition: border-color 0.2s;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.racc-form-group input:focus,
+.racc-form-group textarea:focus,
+.racc-form-group select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.racc-form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.racc-form-group .iti {
+    width: 100%;
+    display: block;
+}
+
+.racc-form-group .iti input[type="tel"] {
+    width: 100%;
+}
+
+.racc-form-group .iti__selected-dial-code,
+.racc-form-group .iti__country-name,
+.racc-form-group .iti__dial-code {
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.racc-form-group .iti__selected-dial-code {
+    color: #1e293b;
+    margin-left: 6px;
+}
+
+.racc-form-group .iti__country-list {
+    max-width: min(360px, calc(100vw - 40px));
+    white-space: normal;
+    z-index: 10000;
+    font-family: inherit;
+}
+
+.racc-form-group .iti__selected-flag {
+    border-radius: 8px 0 0 8px;
+}
+
+/* === Custom Searchable Select (racc-cs) === */
+.racc-cs {
+    position: relative;
+    width: 100%;
+}
+
+.racc-cs-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #94a3b8;
+    background: #fff;
+    cursor: pointer;
+    box-sizing: border-box;
+    text-align: left;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.racc-cs-trigger.racc-cs-has-value {
+    color: #1e293b;
+}
+
+.racc-cs-trigger.racc-cs-open,
+.racc-cs-trigger:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.racc-cs-arrow {
+    font-size: 18px;
+    line-height: 1;
+    color: #334155;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+}
+
+.racc-cs-trigger.racc-cs-open .racc-cs-arrow {
+    transform: rotate(180deg);
+}
+
+.racc-cs-panel {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 2px solid #2563eb;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.racc-cs-search {
+    display: block;
+    width: 100%;
+    padding: 10px 14px;
+    border: none;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 14px;
+    font-family: inherit;
+    color: #1e293b;
+    background: #f8fafc;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.racc-cs-search:focus {
+    background: #fff;
+}
+
+.racc-cs-list {
+    list-style: none;
+    margin: 0;
+    padding: 4px 0;
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+.racc-cs-option {
+    padding: 9px 14px;
+    font-size: 14px;
+    color: #1e293b;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.racc-cs-option:hover {
+    background: #eff6ff;
+}
+
+.racc-cs-option.selected {
+    background: #dbeafe;
+    font-weight: 600;
+    color: #1d4ed8;
+}
+
+.racc-cs-option mark {
+    background: #fef9c3;
+    color: inherit;
+    font-weight: 700;
+    border-radius: 2px;
+    padding: 0 1px;
+}
+
+.racc-cs-empty {
+    padding: 10px 14px;
+    font-size: 13px;
+    color: #94a3b8;
+    font-style: italic;
+}
+
+
+.racc-form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23334155' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 40px;
+}
+
+.racc-field-note {
+    display: block;
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+/* === Booking Summary === */
+.racc-booking-summary {
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.racc-booking-summary h4 {
+    margin: 0 0 12px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #0c4a6e;
+}
+
+.racc-summary-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.racc-summary-item {
+    display: flex;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.racc-summary-label {
+    color: #64748b;
+    min-width: 110px;
+    font-weight: 500;
+}
+
+.racc-summary-value {
+    color: #0f172a;
+    font-weight: 600;
+}
+
+/* === Navigation Buttons === */
+.racc-booking-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #f1f5f9;
+}
+
+/* === Buttons === */
+.racc-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    text-decoration: none;
+}
+
+.racc-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.racc-btn-primary {
+    background: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+}
+
+.racc-btn-primary:hover:not(:disabled) {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.racc-btn-secondary {
+    background: #f1f5f9;
+    color: #334155;
+    border-color: #e2e8f0;
+}
+
+.racc-btn-secondary:hover:not(:disabled) {
+    background: #e2e8f0;
+    border-color: #cbd5e1;
+}
+
+.racc-btn-outline {
+    background: transparent;
+    color: #64748b;
+    border-color: #e2e8f0;
+}
+
+.racc-btn-outline:hover:not(:disabled) {
+    background: #f8fafc;
+    color: #334155;
+    border-color: #cbd5e1;
+}
+
+.racc-btn-success {
+    background: #10b981;
+    color: #fff;
+    border-color: #10b981;
+}
+
+.racc-btn-success:hover:not(:disabled) {
+    background: #059669;
+    border-color: #059669;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+/* === Messages === */
+.racc-booking-message {
+    margin-top: 20px;
+    padding: 16px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.racc-booking-message.racc-msg-success {
+    background: #d1fae5;
+    color: #065f46;
+    border: 1px solid #6ee7b7;
+}
+
+.racc-booking-message.racc-msg-error {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+}
+
+/* === Final Booking Summary === */
+.racc-final-summary {
+    margin-top: 20px;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #cbd5e1;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.racc-final-summary-header {
+    margin-bottom: 18px;
+}
+
+.racc-final-summary-header h3 {
+    margin: 0 0 6px;
+    font-size: 22px;
+    color: #0f172a;
+}
+
+.racc-final-summary-header p {
+    margin: 0;
+    font-size: 14px;
+    color: #475569;
+}
+
+.racc-final-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.racc-final-summary-item {
+    padding: 14px 16px;
+    border-radius: 10px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+}
+
+.racc-final-summary-label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: #64748b;
+}
+
+.racc-final-summary-value {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #0f172a;
+    overflow-wrap: anywhere;
+}
+
+.racc-final-summary-notes {
+    margin-top: 14px;
+    padding: 16px;
+    border-radius: 10px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+}
+
+.racc-final-summary-note-text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #1e293b;
+    white-space: pre-wrap;
+}
+
+.racc-final-summary-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+/* === Google Calendar Add Button === */
+.racc-gcal-widget {
+    text-align: center;
+    margin-top: 16px;
+}
+
+.racc-gcal-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 22px;
+    background: #fff;
+    color: #1a73e8;
+    border: 2px solid #1a73e8;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+}
+
+.racc-gcal-btn:hover {
+    background: #1a73e8;
+    color: #fff;
+}
+
+.racc-gcal-btn:hover svg rect,
+.racc-gcal-btn:hover svg text {
+    fill: #fff;
+}
+
+#racc-final-actions .racc-gcal-widget {
+    margin-top: 0;
+    text-align: left;
+}
+
+/* === Loading Spinner === */
+.racc-loading {
+    text-align: center;
+    padding: 30px;
+    color: #94a3b8;
+}
+
+.racc-spinner {
+    width: 36px;
+    height: 36px;
+    border: 3px solid #e2e8f0;
+    border-top: 3px solid #2563eb;
+    border-radius: 50%;
+    animation: raccSpin 0.8s linear infinite;
+    margin: 0 auto 12px;
+}
+
+@keyframes raccSpin {
+    to { transform: rotate(360deg); }
+}
+
+/* === Responsive === */
+@media (max-width: 600px) {
+    .racc-booking-wrapper {
+        margin: 20px 10px;
+        padding: 24px 20px;
+        border-radius: 12px;
+    }
+
+    .racc-booking-header h2 {
+        font-size: 22px;
+    }
+
+    .racc-step-label {
+        display: none;
+    }
+
+    .racc-booking-steps {
+        gap: 0;
+    }
+
+    .racc-agents-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .racc-services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .racc-schedule-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    #racc-date-picker {
+        max-width: 100%;
+    }
+
+    .racc-booking-nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .racc-booking-nav .racc-btn {
+        width: 100%;
+    }
+
+    .racc-final-summary-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================================
+   Nearest Available Date Suggestion
+   ========================================================= */
+
+/** Pulsing "searching..." text shown while nearest-date fetch is in progress */
+.racc-nearest-searching {
+    padding: 12px 16px;
+    color: #64748b;
+    font-size: 13px;
+    font-style: italic;
+    text-align: center;
+    animation: raccNearestPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes raccNearestPulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.35; }
+}
+
+/** Suggestion card shown when nearest available date is found */
+.racc-nearest-suggestion {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+    padding: 12px 16px;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+
+/** "No dates in 60 days" variant */
+.racc-nearest-suggestion.racc-nearest-none {
+    background: #fef2f2;
+    border-color: #fecaca;
+    color: #991b1b;
+    font-size: 13px;
+    justify-content: center;
+}
+
+.racc-nearest-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.racc-nearest-text {
+    flex: 1;
+    min-width: 0;
+    font-size: 14px;
+    color: #166534;
+    line-height: 1.4;
+}
+
+.racc-nearest-label {
+    color: #4b7c5e;
+}
+
+.racc-nearest-jump-btn {
+    background: #16a34a;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.racc-nearest-jump-btn:hover {
+    background: #15803d;
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   Flatpickr — Available-day green dot marker
+   ========================================================= */
+
+.flatpickr-day.racc-day-available {
+    font-weight: 600;
+}
+
+.flatpickr-day.racc-day-available::after {
+    content: '';
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background: #16a34a;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* Keep dot white when the day is selected or in a range */
+.flatpickr-day.racc-day-available.selected::after,
+.flatpickr-day.racc-day-available.startRange::after,
+.flatpickr-day.racc-day-available.endRange::after {
+    background: rgba(255, 255, 255, 0.85);
+}
+
+/* =========================================================
+   Flatpickr — Calendar loading overlay
+   ========================================================= */
+
+.flatpickr-calendar.racc-calendar-loading {
+    pointer-events: none;
+}
+
+.racc-calendar-loading-panel {
+    position: absolute;
+    inset: 36px 0 0;
+    z-index: 20;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.86);
+    color: #334155;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    backdrop-filter: blur(2px);
+}
+
+.racc-calendar-loading-spinner {
+    width: 18px;
+    height: 18px;
+    border: 3px solid #bfdbfe;
+    border-top-color: #2563eb;
+    border-radius: 50%;
+    flex: 0 0 auto;
+    animation: raccCalendarSpin 0.8s linear infinite;
+}
+
+@keyframes raccCalendarSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}

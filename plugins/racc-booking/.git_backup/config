@@ -1,0 +1,36 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "origin"]
+	url = https://github.com/sihabudinahmad/racc-booking.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "dev"]
+	vscode-merge-base = origin/main
+[branch "dev-ai"]
+	vscode-merge-base = origin/main
+[branch "main"]
+	vscode-merge-base = origin/main
+[branch "rcc-woo"]
+	vscode-merge-base = origin/main
+[branch "revisi-pilih-consultant"]
+	vscode-merge-base = origin/main
+[branch "fix-availability"]
+	vscode-merge-base = origin/main
+[branch "bug-fix-blackbox"]
+	vscode-merge-base = origin/main
+	remote = origin
+	merge = refs/heads/bug-fix-blackbox
+[branch "fix/booking-domicile-state"]
+	vscode-merge-base = origin/bug-fix-blackbox
+	remote = origin
+	merge = refs/heads/fix/booking-domicile-state
+[branch "improve-consultant-sync"]
+	vscode-merge-base = origin/fix/booking-domicile-state
+	remote = origin
+	merge = refs/heads/improve-consultant-sync
+[branch "test-sihab-merge"]
+	vscode-merge-base = origin/main

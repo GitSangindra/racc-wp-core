@@ -1,0 +1,19 @@
+# Ignore all files and directories by default
+/*
+
+# But include these specific directories and files
+!/plugins/
+!/themes/
+!.gitignore
+
+# Inside plugins, ignore everything EXCEPT our custom plugins
+/plugins/*
+!/plugins/racc-booking/
+!/plugins/racc-booking-woo/
+
+# Inside themes, ignore everything EXCEPT our custom theme
+/themes/*
+!/themes/racc-theme/
+
+# (Optional) Ignore macOS system files
+.DS_Store
